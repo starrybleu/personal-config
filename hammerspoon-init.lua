@@ -10,6 +10,10 @@ remapper:remap('rcmd', 'f18')
 remapper:remap('capslock', 'f19')
 remapper:register()
 
+hs.hotkey.bind({"cmd"}, "y", function()
+    hs.eventtap.keyStroke({"cmd", "shift"}, "z")
+end)
+
 --
 
 now = hs.timer.secondsSinceEpoch

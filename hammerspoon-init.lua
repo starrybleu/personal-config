@@ -10,11 +10,19 @@ remapper:remap('rcmd', 'f18')
 remapper:remap('capslock', 'f19')
 remapper:register()
 
-hs.hotkey.bind({"cmd"}, "y", function()
+local remapperMagicKeyboard = FRemap.new({vendorID=0x004C, productID=0x0267})
+-- remapperMagicKeyboard:remap('lctrl', 'fn'):remap('fn', 'lctrl') -- Not working :(
+-- remapperMagicKeyboard:register()
+
+redoer = function()
     hs.eventtap.keyStroke({"cmd", "shift"}, "z")
-end)
+end
+
+hs.hotkey.bind({"cmd"}, "y", redoer, nil, redoer)
 
 --
+
+-- beginning of caps lock to click
 
 now = hs.timer.secondsSinceEpoch
 
@@ -72,3 +80,7 @@ hs.hotkey.bind({}, "f19",
     handle_drag:start()
   end
 )
+
+-- end of caps lock to click
+
+hs.alert.show('reloaded')

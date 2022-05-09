@@ -1,0 +1,25 @@
+{
+  "title": "redo cmd+y",
+  "rules": [
+    {
+      "description": "redo 'cmd + y' globally",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "y",
+            "modifiers": {
+              "mandatory": ["command"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "z",
+              "modifiers": ["command", "shift"]
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    }
+  ]
+}

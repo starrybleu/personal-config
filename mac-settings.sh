@@ -129,8 +129,15 @@ git config --global user.signingkey {GPG 생성 후 나온 signingkey}
 git config --global commit.gpgsign true
 git config --global gpg.program gpg
 
-# 
+# bundle 로 ruby gem registry 에서 다운받도록 토큰 설정 등
+vim ~/.bundle/config # 파일 내용
+```
+---
+BUNDLE_HTTPS://RUBYGEMS__PKG__GITHUB__COM/DRAMANCOMPANY/: "starrybleu:ghp_xxxxxxx"
+BUNDLE_JOBS: "2"
+BUNDLE_SET: "build.cflags -Wno-error=incompatible-function-pointer-types"
+```
 
-
-
+# remember-api 프로젝트에서
+CFLAGS="-Wno-error=incompatible-function-pointer-types" bundle install
 

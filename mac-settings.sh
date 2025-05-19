@@ -141,3 +141,9 @@ BUNDLE_SET: "build.cflags -Wno-error=incompatible-function-pointer-types"
 # remember-api 프로젝트에서
 CFLAGS="-Wno-error=incompatible-function-pointer-types" bundle install
 
+# ruby 3.0.2 를 설치하기 위해 필요했던 것
+curl -sSL https://github.com/ruby/ruby/commit/1dfe75b0beb7171b8154ff0856d5149be0207724.patch -o ruby-3.0.x.patch
+RUBY_APPLY_PATCHES=$'./ruby-3.0.x.patch' asdf install ruby 3.0.2
+
+# ruby 3.2.1 을 설치하기 위해 필요했던 것
+brew install libyaml
